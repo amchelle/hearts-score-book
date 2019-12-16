@@ -2,8 +2,20 @@
 % Started 2019-12-16
 
 \documentclass{article}
-\usepackage{lipsum}
+
+\usepackage{graphicx}
+\graphicspath{ {../..//img/} }
+
 \usepackage[papersize={13.97cm,21.58cm}]{geometry}
+
+\usepackage[table]{xcolor}
+\definecolor{HeartRed}{RGB}{181,2,2}
+
+\input GoudyIn.fd
+\newcommand*\initfamily{\usefont{U}{GoudyIn}{xl}{n}}
+
+\usepackage{calligra}
+\usepackage[T1]{fontenc}
 
 \usepackage{pgffor}
 
@@ -13,16 +25,52 @@
 \begin{document}
 
 \begin{titlepage}
-\clearpage
-\maketitle
-\thispagestyle{empty}
+  \begin{center}
+
+    \fontsize{50}{20}
+    \initfamily CROSSON
+
+    \vspace{0.5cm}
+    \calligra
+    \fontsize{25}{30}
+    {\color{HeartRed} Hearts}
+
+    \normalfont
+
+    \vspace{0.3cm}
+    \fontsize{30}{35}
+    \textsc{Score Book}
+
+    \vspace{0.75cm}
+    \includegraphics[scale=2.5]{queen-of-spades}
+
+  \end{center}
 \end{titlepage}
 
 \pagestyle{plain}
+
 \foreach \i in {1,...,24} {
 
-  \
-  \newpage
+  \begin{table}
+    \centering
+    \fontsize{16}{20}\selectfont
+    %% TODO: change font
+    {\rowcolors{1}{}{gray!20}
+      \begin{tabular}{ l||c|c|c|c }
+        Pass & Bob & Caroline & Eric & Amchelle \\
+        \hline\hline
+        L & & & & \\
+        \hline
+        R & & & & \\
+        \hline
+        A & & & & \\
+        \hline
+        N & & & & \\
+      \end{tabular}
+    }
+  \end{table}
+
+  \ \newpage
 }
 
 \end{document}
