@@ -1,15 +1,14 @@
-% Written by Amchelle Clendenin
+% Wrtten by Amchelle Clendenin
 % Started 2019-12-16
 
 \documentclass{article}
+\usepackage[papersize={13.97cm,21.58cm},top=1in,left=0.4in,right=0.4in,headsep=0.2in]{geometry}
+\setlength{\footskip}{50pt}
+\setlength{\headheight}{14pt}
 
-\usepackage{graphicx}
-\graphicspath{ {../..//img/} }
-
-\usepackage[papersize={13.97cm,21.58cm}]{geometry}
-
-\usepackage[table]{xcolor}
-\definecolor{HeartRed}{RGB}{181,2,2}
+\usepackage{pgffor}
+\usepackage{fancyhdr}
+\usepackage{tabularx}
 
 \input GoudyIn.fd
 \newcommand*\initfamily{\usefont{U}{GoudyIn}{xl}{n}}
@@ -17,17 +16,33 @@
 \usepackage{calligra}
 \usepackage[T1]{fontenc}
 
-\usepackage{pgffor}
+\usepackage{emerald}
+\usepackage[T1]{fontenc}
 
-\title{Crosson Hearts Score Book}
-\date{December 25, 2019}
+\usepackage[T1]{fontenc}
+\renewcommand*\familydefault{\ttdefault} %% Only if the base font of the document is to be typewriter style
+
+\usepackage{graphicx}
+\graphicspath{ {../../img/} }
+
+\usepackage[table]{xcolor}
+\definecolor{HeartRed}{RGB}{181,2,2}
+
+\newcommand{\tricks}{
+  \rowcolor{gray!20}
+  L & & & & \\ \hline
+  R & & & & \\ \hline
+  \rowcolor{gray!20}
+  A & & & & \\ \hline
+  N & & & &
+}
 
 \begin{document}
 
 \begin{titlepage}
   \begin{center}
 
-    \fontsize{50}{20}
+    \fontsize{50}{0}
     \initfamily CROSSON
 
     \vspace{0.5cm}
@@ -41,36 +56,97 @@
     \fontsize{30}{35}
     \textsc{Score Book}
 
-    \vspace{0.75cm}
-    \includegraphics[scale=2.5]{queen-of-spades}
+    \vspace{1cm}
+    \includegraphics[scale=2.75]{queen-of-spades}
 
   \end{center}
 \end{titlepage}
 
-\pagestyle{plain}
+\begin{titlepage}
+  \begin{center}
+    \hspace{0pt}
+    \vfill
 
-\foreach \i in {1,...,24} {
+    \vspace{1cm}
 
+    Dear Mom \& Dad,
+
+    \vspace{0.5cm}
+
+    We hope to fill this book with lots of fun memories, we love playing
+    Hearts with you both.
+
+    \vspace{1cm}
+
+    Merry Christmas 2019!
+
+    \vspace{0.5cm}
+
+    Love,
+
+    Eric \& Amchelle
+
+    \vspace{5cm}
+
+    \fontsize{28}{0}
+    \ECFMovieola
+    aLwAyS sHoOt FoR tHe MoOn
+
+    \vfill
+    \hspace{0pt}
+  \end{center}
+\end{titlepage}
+
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\large Date:}
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\foreach \i in {1,...,50} {
+  \clearpage
   \begin{table}
-    \centering
-    \fontsize{16}{20}\selectfont
-    %% TODO: change font
-    {\rowcolors{1}{}{gray!20}
-      \begin{tabular}{ l||c|c|c|c }
-        Pass & Bob & Caroline & Eric & Amchelle \\
-        \hline\hline
-        L & & & & \\
-        \hline
-        R & & & & \\
-        \hline
-        A & & & & \\
-        \hline
-        N & & & & \\
-      \end{tabular}
-    }
-  \end{table}
+    %% \centering
+    \fontsize{12}{23}\selectfont
 
-  \ \newpage
+    \begin{tabularx}{1\textwidth} {
+        >{\centering\arraybackslash}X
+        || >{\centering\arraybackslash}X
+        | >{\centering\arraybackslash}X
+        | >{\centering\arraybackslash}X
+        | >{\centering\arraybackslash}X }
+      Pass & Bob & Caroline & Eric & Amchelle \\ \hline\hline
+      \tricks \\ \hline
+      \tricks \\ \hline
+      \tricks \\ \hline
+      \tricks \\ \hline
+      \tricks
+    \end{tabularx}
+  \end{table}
+}
+
+\foreach \i in {1,...,50} {
+  \clearpage
+  \begin{table}
+    %% \centering
+    \fontsize{12}{23}\selectfont
+
+    \begin{tabularx}{1\textwidth} {
+        >{\centering\arraybackslash}X
+        || >{\centering\arraybackslash}X
+        | >{\centering\arraybackslash}X
+        | >{\centering\arraybackslash}X
+        | >{\centering\arraybackslash}X }
+      Pass & & & & \\ \hline\hline
+      \tricks \\ \hline
+      \tricks \\ \hline
+      \tricks \\ \hline
+      \tricks \\ \hline
+      \tricks
+    \end{tabularx}
+  \end{table}
 }
 
 \end{document}
