@@ -41,7 +41,7 @@
     "@typescript-eslint/eslint-plugin": "^2.6.0",
     "@typescript-eslint/parser": "^2.6.0",
     "ava": "^2.4.0",
-    "codecov": "^3.1.0",
+    "codecov": "^3.7.1",
     "eslint": "^6.6.0",
     "nyc": "^14.1.0",
     "tap-nyc": "^1.0.3",
